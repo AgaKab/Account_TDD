@@ -3,13 +3,19 @@ class Account:
         self.saldo = amount
     
     def deposit(self, cash):
-        pass
+        if cash > 0:
+            self.saldo += cash
+        else:
+            raise ValueError("Desposit can't be negative!")
         
     def withdraw(self, cash):
-        pass
-        
+        if self.saldo >= cash:
+            self.saldo -= cash
+        else:
+            raise ValueError("Not enought money!")
+              
     def get_balance(self):
-       pass
+       return self.saldo
         
     
     
